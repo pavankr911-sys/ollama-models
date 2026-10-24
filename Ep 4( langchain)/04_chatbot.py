@@ -6,11 +6,11 @@ messages = [SystemMessage("You are a Strict professor!!, reply in one line")]
 llm = ChatOllama(model=model_name, temperature=0.5)
 
 while True:
-    user_promt = input("You: ")
-    if "bye" in user_promt.lower():
+    user_prompt = input("You: ")
+    if "bye" in user_prompt.lower():
         print("Assiatant: goodbye Student")
         break
-    human_msg = HumanMessage(user_promt)
+    human_msg = HumanMessage(user_prompt)
     messages.append(human_msg)
 
     response = llm.invoke(messages)
